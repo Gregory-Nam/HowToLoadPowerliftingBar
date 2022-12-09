@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import WeightInputForm from './components/weightinput/WeightInput';
+import { useState } from 'react';
 
 function App() {
+  
+  const [platesToDisplay, setPlates] = useState([]);
+
+
+  const handleChange = (plates) => {
+    setPlates(plates);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>How to load your powerlifting bar ?</h1>
+      <div className='Plates'>
+        {platesToDisplay.map((plate) =>{
+            return plate;
+        })}
+      </div>
+      <div className='InputWeight'>
+        <WeightInputForm loadBar={handleChange}></WeightInputForm>
+      </div>
     </div>
   );
 }
