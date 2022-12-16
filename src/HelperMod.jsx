@@ -2,7 +2,7 @@ import './App.css';
 import WeightInputForm from './components/weightinput/WeightInput';
 import { useState } from 'react';
 
-function App() {
+function HelperMod() {
   
   const [platesToDisplay, setPlates] = useState([]);
 
@@ -11,7 +11,8 @@ function App() {
     setPlates(plates);
   }
 
-  return (
+
+  return(
     <div className="App">
       <h1>How to load your powerlifting bar ?</h1>
       <div className='Plates'>
@@ -23,7 +24,7 @@ function App() {
         <WeightInputForm loadBar={handleChange}></WeightInputForm>
       </div>
     </div>
-  );
+    );
 }
 
-export default App;
+export default HelperMod;
