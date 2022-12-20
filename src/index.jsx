@@ -12,8 +12,8 @@ import CompMod from './CompMod';
 const router = createBrowserRouter([
   {
     path:"/",
-    element:<div className='App'>
-        <h1>How to load your powerlifting bar ?</h1>
+    element:
+        <>
         <button className='MenuButton'>
           <a href="/CompMod">
             Comp mode
@@ -23,9 +23,8 @@ const router = createBrowserRouter([
           <a href="/HelperMod">
             Helper mode
           </a>
-        </button>
+        </button></>
 
-    </div>
   }, 
   {
     path:"/HelperMod",
@@ -42,7 +41,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <div className='App'>
+      <h1>How to load your powerlifting bar ?</h1>
+      <RouterProvider router={router} />
+    </div>
   </React.StrictMode>
 );
 

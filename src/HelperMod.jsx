@@ -13,17 +13,16 @@ function HelperMod() {
 
 
   return(
-    <div className="App">
-      <h1>How to load your powerlifting bar ?</h1>
-      <div className='Plates'>
-        {platesToDisplay.map((plate) =>{
-            return plate;
-        })}
-      </div>
-      <div className='InputWeight'>
-        <WeightInputForm loadBar={handleChange}></WeightInputForm>
-      </div>
-    </div>
+      <>
+        <div className='Plates'>
+          {platesToDisplay.map((plate) =>{
+              return plate;
+          })}
+        </div>
+        <div className='InputWeight'>
+          <WeightInputForm loadBar={handleChange}></WeightInputForm>
+        </div>
+      </>
     );
 }
 
